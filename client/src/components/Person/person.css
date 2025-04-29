@@ -1,0 +1,99 @@
+.total{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+.person-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .back-button {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #252255;
+    color: antiquewhite;
+  }
+  
+  .person-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .person-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .person-info {
+    max-width: 600px;
+  }
+  
+  .person-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .info-grid p {
+    margin: 5px 0;
+  }
+  
+  .biography-section {
+    margin-top: 30px;
+  }
+  
+  .bio-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .bio-line {
+    width: 100%;
+    height: 2px;
+    background-color: #2f09da;
+    margin: 10px 0;
+  }
+  
+  .bio-text {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .similar-crew-section {
+    margin: 20px 20px; /* Add padding on both sides */
+  }
+  
+  .similar-crew-swiper {
+    padding: 0 20px; /* Left and right padding for alignment */
+  }
+  
+  .crew-image {
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crew-name {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  

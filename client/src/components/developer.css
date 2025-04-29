@@ -1,0 +1,9 @@
+.no-data-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+.select-placeholder {
+  display: none;
+}

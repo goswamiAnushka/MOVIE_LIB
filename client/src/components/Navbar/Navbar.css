@@ -1,0 +1,388 @@
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+  font-family: "Arial", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Allow dropdown to overflow */
+  box-sizing: border-box;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.brand {
+  color: rgb(135, 105, 219);
+}
+
+.highlight {
+  color: #ad8beb;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.nav-links a {
+  color: rgb(166, 117, 212);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links a:hover {
+  color: #420c885e;
+}
+
+/* Nav Center (Search and Icons) */
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 20px;
+  margin: 0 20px;
+  max-width: 100%;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 8px 10px;
+  border-radius: 20px;
+  width: 300px;
+  color: #2b1d35;
+  flex-shrink: 1;
+}
+
+.search-icon {
+  color: rgb(26, 25, 25);
+  margin-right: 10px;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Icons */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  position: relative; /* Ensure dropdown is positioned relative to nav-icons */
+}
+
+/* Create Button */
+.create-btn {
+  background-color: #6d28d9;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s;
+}
+
+.create-btn:hover {
+  background-color: #5a21b6;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.profile-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 45px; /* Adjust this value if needed */
+  right: 0;
+  background: #8c82f5;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 160px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  z-index: 1100;
+  overflow: visible; /* Ensure dropdown content is visible */
+}
+
+.dropdown-menu button {
+  background: transparent;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.dropdown-menu button:hover {
+  background: #5a21b6;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Sidebar Menu (Mobile Navigation) */
+.sidebar-menu {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-center,
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: #2b1d35;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 2500;
+  }
+
+  .sidebar-menu.open {
+    left: 0;
+  }
+
+  .sidebar-menu a,
+  .sidebar-menu button {
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s;
+  }
+
+  .sidebar-menu a:hover,
+  .sidebar-menu button:hover {
+    background: #5a21b6;
+  }
+
+  .sidebar-create-btn {
+    display: block;
+    background-color: #6d28d9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+    transition: background 0.3s;
+  }
+
+  .sidebar-create-btn:hover {
+    background-color: #5a21b6;
+  }
+  .nav-icons .create-btn {
+    display: none;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-icons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .search-input {
+    font-size: 12px;
+  }
+
+  .create-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .profile-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+  font-family: "Arial", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Allow dropdown to overflow */
+  box-sizing: border-box;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: black; /* Change to black or any color that fits your design */
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: auto; /* Push the hamburger to the left */
+}
+
+/* Sidebar Menu (Mobile Navigation) */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide sidebar by default */
+  width: 250px;
+  height: 100%;
+  background: #2b1d35;
+  padding-top: 60px; /* Adjust based on your navbar height */
+  transition: left 0.3s ease-in-out;
+  z-index: 2500;
+}
+
+.sidebar-menu.open {
+  left: 0; /* Show sidebar when open */
+}
+
+.sidebar-menu a,
+.sidebar-menu button {
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+/* Overlay for Background */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2400;
+}
+
+.overlay.open {
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-center,
+  .nav-links {
+    display: none;
+  }
+
+  .sidebar-menu {
+    display: flex;
+  }
+}
