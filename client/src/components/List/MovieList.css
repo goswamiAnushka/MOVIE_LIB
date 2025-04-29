@@ -1,0 +1,619 @@
+/* Root-level variables */
+:root {
+    --background-color: #ffffff;
+    --text-color: #182335;
+    --active-blue: #685cf0;
+    --brand-dark-purple: #4b3f72;
+    --brand-purple: #7a5ea8;
+    --white-bg: #fff;
+    --surface1: #f7f7f9;
+    --surface2: #d9d9e3;
+    --surface3: #c3c3c3;
+    --inactive-input-bg: #f0f0f3;
+    --body-text: #333333;
+    --text-lighter: #999999;
+    --inactive-input-text: #808080;
+    --boder-default: #d9d9d9;
+    --border-light: #d9d9e1;
+    --boder-focus: #742ea6;
+}
+
+/* Dark Mode */
+.dark {
+    --background-color: #161019;
+    --text-color: #ffffff;
+    --active-blue: #685cf0;
+    --brand-dark-purple: #4b3f72;
+    --brand-purple: #7a5ea8;
+    --white-bg: #fff;
+    --surface1: #1a1424;
+    --surface2: #231b32;
+    --surface3: #463663;
+    --inactive-input-bg: #f0f0f3;
+    --body-text: #333333;
+    --text-lighter: #999999;
+    --inactive-input-text: #808080;
+    --boder-default: #d9d9d9;
+    --border-light: #d9d9e1;
+    --boder-focus: #742ea6;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0 8px; /* Add padding to the left and right */
+    box-sizing: border-box;
+}
+
+/* Optional: For consistent inner content alignment */
+.container {
+    max-width: 1200px; /* Set a max width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 20px; /* Add left and right padding */
+}
+
+
+/* Banner Styling */
+/* Banner Styling */
+.banner {
+    position: relative;
+    height: 66vh; /* Increased height */
+    color: var(--white-bg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.9;
+    margin: 0; /* Ensure no extra margins or padding */
+    padding: 0; /* Remove padding */
+}
+
+/* Adjust Banner Contents */
+.banner__contents {
+    position: absolute;
+    bottom: 30px; /* Adjusted to fit new height */
+    left: 30px;
+    max-width: 80%; /* Keeps it responsive */
+    padding: 0 10px;
+}
+
+/* Make Description Wider */
+.banner__description {
+    width: 90%; /* Increased width for better readability */
+    margin-top: 10px;
+    line-height: 1.5;
+    max-height: none; /* Allows it to expand if needed */
+    overflow: visible; /* Ensures no hidden text */
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background for better contrast */
+    padding: 10px; /* Padding for readability */
+    border-radius: 8px; /* Slight rounding for aesthetics */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for text visibility */
+    color: #ffffff; /* Ensure text is white for contrast */
+}
+
+/* Optional: Ensure Buttons Adjust with Larger Banner */
+.banner__buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.banner__button {
+    padding: 15px 30px;
+    background-color: var(--active-blue);
+    border: none;
+    color: var(--white-bg);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+}
+
+.banner__button:hover {
+    background-color: var(--brand-dark-purple);
+}
+
+
+/* Movie Row Styling */
+.movie-row__posters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 8px 0;
+}
+
+.movie-row__poster {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
+}
+
+.movie-row__poster:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper Pagination Styling */
+.swiper-pagination {
+    bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background: #727272;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--active-blue);
+}
+
+/* DatePicker Styling - Calendar Popup */
+.react-datepicker {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    background-color: var(--white-bg);
+    padding: 10px;
+    position: relative; /* Positioning for upward alignment */
+}
+
+/* Popup Positioning for Larger Screens */
+@media screen and (min-width: 1024px) {
+    .react-datepicker {
+        bottom: auto;
+        top: 60px; /* Adjust the popup to appear above */
+    }
+}
+
+.react-datepicker__header {
+    background-color: var(--brand-dark-purple);
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.react-datepicker__day-names,
+.react-datepicker__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.react-datepicker__day {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.react-datepicker__day:hover {
+    background-color: var(--active-blue);
+    color: var(--white-bg);
+}
+
+.react-datepicker__day--selected {
+    background-color: var(--active-blue);
+    color: var(--white-bg);
+}
+
+.react-datepicker__month {
+    padding: 5px 0;
+}
+
+/* DatePicker Input Container */
+.react-datepicker__input-container input {
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    background-color: var(--inactive-input-bg);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.react-datepicker__input-container input:focus {
+    outline: none;
+    border-color: var(--boder-focus);
+    box-shadow: 0 0 5px var(--boder-focus);
+}
+
+/* Filter Section */
+.filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 18px auto;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Filter Elements */
+.filter__dropdown,
+.filter__input,
+.filter__reset,
+.filter__rating {
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 180px;
+}
+
+.filter__dropdown,
+.filter__input {
+    flex: 1;
+}
+
+.filter__reset {
+    background-color: var(--active-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 8px 16px;
+}
+
+.filter__reset:hover {
+    background-color: var(--brand-dark-purple);
+}
+
+.filter__rating {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-shrink: 0;
+    width: auto; /* Removed unnecessary width */
+}
+
+.filter__star {
+    color: #ffcc00;
+    cursor: pointer;
+}
+
+.filter__star.active {
+    color: #ff8000;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .filter {
+        flex-direction: column; /* Make filter section vertical */
+        gap: 13px;
+    }
+
+    .filter__dropdown,
+    .filter__input,
+    .filter__reset,
+    .filter__rating {
+        width: 90%; /* Ensure all elements take full width */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .filter__reset {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Further adjustments for smaller screens (mobile) */
+@media screen and (max-width: 768px) {
+    .filter {
+        gap: 10px; /* Reduced gap on smaller screens */
+        padding: 10px;
+    }
+
+    .filter__dropdown,
+    .filter__input,
+    .filter__reset,
+    .filter__rating {
+        width: 85%; /* Ensure all fields take full width */
+    }
+
+    .filter__reset {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filter__reset {
+        font-size: 13px; /* Adjust font size */
+        padding: 8px;
+    }
+}
+/* DatePicker Styling - Adjustments for Overlap and Purple Theme */
+.react-datepicker {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    background-color: var(--brand-purple); /* Updated to purple */
+    color: var(--white-bg); /* Ensures text is readable */
+    padding: 10px;
+    position: absolute; /* Ensure proper positioning */
+    z-index: 1000; /* Bring to the foreground */
+    top: auto; /* Reset any bottom alignment */
+    transform: translateY(-10px); /* Adjust to prevent overlap */
+}
+
+/* Calendar Header */
+.react-datepicker__header {
+    background-color: var(--brand-dark-purple); /* Dark purple header */
+    color: var(--white-bg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+}
+
+/* Calendar Days */
+.react-datepicker__day-names,
+.react-datepicker__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.react-datepicker__day {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.react-datepicker__day:hover {
+    background-color: var(--active-blue); /* Highlighted blue on hover */
+    color: var(--white-bg);
+}
+
+.react-datepicker__day--selected {
+    background-color: var(--active-blue); /* Blue for selected days */
+    color: var(--white-bg);
+}
+
+/* Calendar Month Padding */
+.react-datepicker__month {
+    padding: 5px 0;
+}
+
+/* Input Container Focus */
+.react-datepicker__input-container input {
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    background-color: var(--inactive-input-bg);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.react-datepicker__input-container input:focus {
+    outline: none;
+    border-color: var(--boder-focus);
+    box-shadow: 0 0 5px var(--boder-focus);
+}
+
+/* Adjustments for Large Screens to Prevent Overlap */
+@media screen and (min-width: 1024px) {
+    .react-datepicker {
+        top: -200px; /* Move the popup above the triggering input */
+    }
+}
+
+/* Center the pagination dots below the banner */
+.swiper-pagination {
+    position: absolute;
+    bottom: 50px; /* Adjusted to move dots higher above the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Spacing between dots */
+    z-index: 10;
+  }
+  
+  /* Style for individual dots */
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Style for the active dot */
+  .swiper-pagination-bullet-active {
+    background-color: #ffffff; /* Solid white for active dot */
+    opacity: 1;
+    transform: scale(1.2); /* Slightly enlarge the active dot */
+  }
+  .movie-list {
+    min-height: 100vh; /* Ensures consistent height */
+  }
+  
+  .movie-container {
+    min-height: 400px; /* Keeps space reserved for movie rows */
+  }
+  
+  .no-results {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+  }
+  .banner, .movie-row {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.movie-row__poster-container {
+  position: relative;
+  display: inline-block;
+}
+
+.movie-row__actions {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.movie-row__actions .icon {
+  color: white; /* Default color */
+  transition: color 0.3s ease;
+}
+
+.movie-row__actions .save-icon:hover {
+  color: yellow; /* Turns yellow on hover */
+}
+
+.movie-row__actions .like-icon:hover {
+  color: red; /* Turns red on hover */
+}
+
+.movie-row__poster {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+.save-icon.saved {
+    color: yellow; /* Change to your preferred color */
+  }
+
+/* Ensure buttons are clickable */
+.banner__button {
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+  
+  /* Ensure movie posters are clickable */
+  .movie-row__poster {
+    cursor: pointer;
+    position: relative;
+  }
+  .movie-row__poster {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-row__poster:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .movie-row__posterLarge {
+    max-height: 250px; /* Adjust for larger posters */
+  }
+  .liked-movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .see-all-link {
+    display: block;
+    text-align: right;
+    margin-top: 16px;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .see-all-link:hover {
+    text-decoration: underline;
+  }
+ /* Playlist Row Styling */
+.playlist-card {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%; /* Ensure cards take full width of their container */
+    height: 200px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--surface1); /* Use a surface color for consistency */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.playlist-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.playlist-banner {
+    width: 100%;
+    height: 70%; /* Fixed height for the banner */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.playlist-name {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color); /* Use theme text color */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px; /* Add padding to prevent text overflow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .playlist-card {
+        height: 180px; /* Slightly smaller height for mobile */
+    }
+
+    .playlist-banner {
+        height: 65%; /* Adjust banner height for mobile */
+    }
+
+    .playlist-name {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}

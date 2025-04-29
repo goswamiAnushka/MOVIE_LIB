@@ -1,0 +1,8 @@
+.dark .movie-details-info-rt ul li:not(:last-child):after {
+  background: #fff;
+}
+.dark .movielist-title ul li.active,
+.movielist-title ul li:hover {
+  background: var(--brand-dark-purple);
+  color: #fff;
+}

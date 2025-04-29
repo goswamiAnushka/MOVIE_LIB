@@ -1,0 +1,160 @@
+/* General Playlist Page Styles */
+.playlist-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: white;
+
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  height: 64px; /* Adjust based on your Navbar height */
+  z-index: 1000; /* Ensure Navbar stays on top */
+}
+
+/* Playlist Layout (Sidebar + Create Playlist) */
+.playlist-layout {
+  display: flex;
+  flex: 1;
+  margin-top: 64px; /* Push content below Navbar */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 240px; /* Adjust width as needed */
+  height: calc(100vh - 64px); /* Full height minus Navbar */
+  background-color: #f5f5f5; /* Adjust color as needed */
+  position: fixed;
+  left: 0;
+  top: 64px; /* Below Navbar */
+  overflow-y: auto;
+}
+
+/* Create Playlist Container */
+.create-playlist-container {
+  flex: 1;
+  margin-left: 380px; /* Sidebar width + 20px spacing */
+  margin-right: 20px; /* Space on the right */
+  padding: 20px;
+  max-width: 800px; /* Reduce width of the create playlist part */
+}
+
+/* Create Playlist Content */
+.create-playlist-content {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(210, 95, 255, 0.1);
+}
+
+/* TextField Styles with Purple Border on Hover/Focus */
+.create-playlist-content .MuiTextField-root:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+.create-playlist-content .MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: purple; /* Purple border on hover/focus */
+}
+
+/* Thumbnail Upload Area */
+.thumbnail-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.thumbnail-area {
+  width: 100%;
+  height: 180px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.thumbnail-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Thumbnail Banner at Top */
+.thumbnail-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.thumbnail-preview {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-banner {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Movie Search Results and Added Movies */
+.movie-results,
+.added-movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Movie Thumbnails */
+.movie-thumbnail {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-thumbnail:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.movie-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Remove Icon Styles */
+.remove-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 100;
+  border: 1px solid white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.remove-icon:hover {
+  background-color: white;
+}
